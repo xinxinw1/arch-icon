@@ -1,0 +1,14 @@
+post_install() {
+  echo "Run the following to set the icon to the Arch Linux icon:"
+  echo gsettings set org.mate.panel.menubar icon-name arch-icon
+}
+
+post_upgrade() {
+  post_install $1
+}
+
+pre_remove() {
+  echo "Run the following to reset the icon back to the default icon:"
+  echo gsettings reset org.mate.panel.menubar icon-name
+}
+
